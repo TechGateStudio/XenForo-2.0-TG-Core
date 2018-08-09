@@ -1,0 +1,9 @@
+{
+    "template": "permission_definition_edit",
+    "description": "Add redirect for addon filter.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "</xf:form>",
+    "replace": "<xf:redirect />\n$0"
+}

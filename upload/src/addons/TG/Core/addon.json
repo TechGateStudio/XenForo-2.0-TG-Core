@@ -1,0 +1,14 @@
+{
+    "legacy_addon_id": "",
+    "title": "[TG] Core",
+    "description": "TechGate add-ons core.",
+    "version_id": 1000010,
+    "version_string": "1.0.0 Alpha",
+    "dev": "Spark108",
+    "dev_url": "https://spark108.ru",
+    "faq_url": "",
+    "support_url": "",
+    "extra_urls": [],
+    "require": [],
+    "icon": "fa-wrench"
+}

@@ -1,0 +1,7 @@
+<xf:macro name="gender" arg-user="!">
+	<xf:selectrow name="tgc_gender" label="{{ phrase('tgc_gender') }}" value="{$user.tgc_gender}">
+		<xf:option value="none">{{ phrase('no_selection') }}</xf:option>
+		<xf:option value="male">{{ phrase('tgc_gender_male') }}</xf:option>
+		<xf:option value="female">{{ phrase('tgc_gender_female') }}</xf:option>
+	</xf:selectrow>
+</xf:macro>

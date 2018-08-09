@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<template_modifications>
+  <modification type="public" template="account_details" modification_key="tgc_account_details_gender" description="Add gender edit." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:macro template="helper_account" name="dob_privacy_row" />]]></find>
+    <replace><![CDATA[$0
+<xf:macro template="tgc_helper_gender_edit" name="gender" arg-user="{$xf.visitor}"/>]]></replace>
+  </modification>
+  <modification type="public" template="core_input.less" modification_key="tgc_core_input" execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/^.*$/su]]></find>
+    <replace><![CDATA[$0
+{{ include('tgc_core_input.less') }}]]></replace>
+  </modification>
+  <modification type="public" template="helper_js_global" modification_key="tgc_helper_js_global_js" description="Add js." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--XF:JS-->]]></find>
+    <replace><![CDATA[$0
+<script src="{{ js_url('tg/core/vendor/moment.js') }}"></script>
+<script src="{{ js_url('tg/core/vendor/bootstrap-material-datetimepicker.js') }}"></script>
+<script src="{{ js_url('tg/core/form.js') }}"></script>]]></replace>
+  </modification>
+  <modification type="public" template="helper_js_global" modification_key="tgc_helper_js_global_css" description="Add css." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<!--XF:CSS-->]]></find>
+    <replace><![CDATA[<xf:css src="tgc_bootstrap_material_datetimepicker.less" />
+
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="permission_definition_edit" modification_key="tgc_permission_definition_edit_redirect" description="Add redirect for addon filter." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[</xf:form>]]></find>
+    <replace><![CDATA[<xf:redirect />
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="permission_definition_list" modification_key="tgc_permission_definition_list_button" description="Add buttons." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[{$interfaceGroup.title}]]></find>
+    <replace><![CDATA[<span class="u-pullRight" style="width:20px;text-align:center;" role="presentation" aria-hidden="true"> &middot; </span>
+
+<a href="{{ link('permission-definitions/permissions/add', null, {
+	'interface_group_id': $interfaceGroupId
+}) }}" class="u-pullRight">{{ phrase('add_permission') }}</a>
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="permission_definition_list" modification_key="tgc_permission_definition_list_order" description="Add order." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:datarow
+								href="{{ link('permission-definitions/permissions/edit', $permission) }}"
+								label="{$permission.title}"
+								hint="{$permission.permission_group_id} / {$permission.permission_id}"
+								hash="{$permission.permission_group_id}_{$permission.permission_id}" />]]></find>
+    <replace><![CDATA[<xf:datarow
+	href="{{ link('permission-definitions/permissions/edit', $permission) }}"
+	label="{$permission.title}"
+	hint="{$permission.permission_group_id} / {$permission.permission_id}"
+	hash="{$permission.permission_group_id}_{$permission.permission_id}">
+
+	<xf:cell class="dataList-cell--min dataList-cell--hint">{$permission.display_order}</xf:cell>
+</xf:datarow>]]></replace>
+  </modification>
+  <modification type="admin" template="permission_definition_list" modification_key="tgc_permission_definition_list_addon_filter" description="Add addon filter." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[</xf:pageaction>]]></find>
+    <replace><![CDATA[$0
+<div class="block">
+	<div class="block-other">
+		<xf:macro template="addon_macros" name="addon_change_menu"
+				  arg-addOns="{$addOns}"
+				  arg-currentAddOn="{$currentAddOn}"
+				  arg-route="permission-definitions"
+				  arg-routeData="null"
+				  arg-routeParams="{$linkParams}"/>
+	</div>
+</div>]]></replace>
+  </modification>
+  <modification type="admin" template="permission_macros" modification_key="tgc_permission_macros" description="Add addon name for interface group." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<span class="block-formSectionHeader-aligner">{$interfaceGroup.title}</span>]]></find>
+    <replace><![CDATA[$0
+<span style="margin-left:15px;color:#8c8c8c;">{$interfaceGroup.AddOn.title}</span>]]></replace>
+  </modification>
+  <modification type="admin" template="permission_macros" modification_key="tgc_permission_macros_no_active" description="No active." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[ is-active]]></find>
+    <replace><![CDATA[]]></replace>
+  </modification>
+  <modification type="admin" template="route_edit" modification_key="route_edit" description="Add button save or exit." execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/<xf:submitrow(.*)\/>/is]]></find>
+    <replace><![CDATA[<xf:macro template="tgcore_macros" name="saveorexit" />]]></replace>
+  </modification>
+  <modification type="admin" template="route_list" modification_key="route_list_filter" description="Add filter." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<div class="block-container">]]></find>
+    <replace><![CDATA[<div class="block-outer">
+	<xf:macro template="filter_macros" name="quick_filter"
+			  arg-key="routes"
+			  arg-class="block-outer-opposite" />
+</div>
+$0]]></replace>
+  </modification>
+  <modification type="admin" template="user_edit" modification_key="tgc_user_edit_gender" description="Add gender edit." execution_order="10" enabled="1" action="str_replace">
+    <find><![CDATA[<xf:macro template="public:helper_user_dob_edit" name="dob_edit" arg-dobData="{$user.Profile}" />]]></find>
+    <replace><![CDATA[$0
+<xf:macro template="public:tgc_helper_gender_edit" name="gender" arg-user="{$user}" />]]></replace>
+  </modification>
+</template_modifications>

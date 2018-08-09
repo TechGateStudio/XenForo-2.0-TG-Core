@@ -1,0 +1,20 @@
+{
+    "XF-Admin-Controller-PermissionDefinition_TG-Core-XF-Admin-Controller-PermissionDefinition.json": {
+        "hash": "62bcc5e3b0c43852e9435dbd936942a3"
+    },
+    "XF-Admin-Controller-User_TG-Core-XF-Admin-Controller-User.json": {
+        "hash": "312a9a19710ce0f5f729399a919c56ec"
+    },
+    "XF-Entity-User_TG-Core-XF-Entity-User.json": {
+        "hash": "0475b5774c0bc75adb1d1faa57c062c5"
+    },
+    "XF-Pub-Controller-Account_TG-Core-XF-Pub-Controller-Account.json": {
+        "hash": "4befc9d6f81873b3e2c9e1a4e69eaf73"
+    },
+    "XF-Repository-AddOn_TG-Core-XF-Repository-AddOn.json": {
+        "hash": "ecc184f265adaaca067d52c04abfac12"
+    },
+    "XF-Template-Templater_TG-Core-XF-Template-Templater.json": {
+        "hash": "5f929a72fddef14ff3bf356f08819bdf"
+    }
+}

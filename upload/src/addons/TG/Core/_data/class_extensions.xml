@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class_extensions>
+  <extension from_class="XF\Admin\Controller\PermissionDefinition" to_class="TG\Core\XF\Admin\Controller\PermissionDefinition" execute_order="10" active="1"/>
+  <extension from_class="XF\Admin\Controller\Route" to_class="TG\Core\XF\Admin\Controller\Route" execute_order="10" active="1"/>
+  <extension from_class="XF\Admin\Controller\User" to_class="TG\Core\XF\Admin\Controller\User" execute_order="10" active="1"/>
+  <extension from_class="XF\Entity\User" to_class="TG\Core\XF\Entity\User" execute_order="10" active="1"/>
+  <extension from_class="XF\Pub\Controller\Account" to_class="TG\Core\XF\Pub\Controller\Account" execute_order="10" active="1"/>
+  <extension from_class="XF\Repository\AddOn" to_class="TG\Core\XF\Repository\AddOn" execute_order="10" active="1"/>
+  <extension from_class="XF\Template\Templater" to_class="TG\Core\XF\Template\Templater" execute_order="10" active="1"/>
+</class_extensions>

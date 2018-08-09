@@ -1,0 +1,9 @@
+{
+    "template": "helper_js_global",
+    "description": "Add js.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<!--XF:JS-->",
+    "replace": "$0\n<script src=\"{{ js_url('tg/core/vendor/moment.js') }}\"></script>\n<script src=\"{{ js_url('tg/core/vendor/bootstrap-material-datetimepicker.js') }}\"></script>\n<script src=\"{{ js_url('tg/core/form.js') }}\"></script>"
+}

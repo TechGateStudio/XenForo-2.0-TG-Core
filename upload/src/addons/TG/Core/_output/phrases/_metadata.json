@@ -1,0 +1,20 @@
+{
+    "tgc_gender.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "019ec3132cdf8ee0f2e2a75cf5d3e459"
+    },
+    "tgc_gender_female.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "b719ce180ec7bd9641fece2f920f4817"
+    },
+    "tgc_gender_male.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "63889cfb9d3cbe05d1bd2be5cc9953fd"
+    }
+}

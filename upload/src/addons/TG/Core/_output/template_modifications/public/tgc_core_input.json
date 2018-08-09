@@ -1,0 +1,9 @@
+{
+    "template": "core_input.less",
+    "description": "",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "preg_replace",
+    "find": "/^.*$/su",
+    "replace": "$0\n{{ include('tgc_core_input.less') }}"
+}

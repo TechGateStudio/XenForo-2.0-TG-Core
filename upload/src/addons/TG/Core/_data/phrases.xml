@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<phrases>
+  <phrase title="admin_navigation.techgateCore" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[TechGate | Core]]></phrase>
+  <phrase title="tgc_gender" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Gender]]></phrase>
+  <phrase title="tgc_gender_female" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Female]]></phrase>
+  <phrase title="tgc_gender_male" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Male]]></phrase>
+</phrases>

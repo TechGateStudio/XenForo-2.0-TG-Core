@@ -1,0 +1,35 @@
+.inputTime
+{
+	.inputTime-icon
+	{
+		position: relative;
+
+		.m-faBase();
+		color: @xf-linkColor;
+		font-size: 1.0em;
+		font-style: normal !important;
+		line-height: .75em;
+		vertical-align: -15%;
+
+		width: 45px;
+		justify-content: center;
+		text-align: center;
+
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+
+		@media (max-width: @xf-formResponsive)
+		{
+			vertical-align: 0;
+			width: 25px;
+		}
+
+		&::before
+		{
+			.m-faContent(@fa-var-clock-o, .79em);
+		};
+	}
+}

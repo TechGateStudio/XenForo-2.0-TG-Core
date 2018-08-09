@@ -1,0 +1,9 @@
+{
+    "template": "user_edit",
+    "description": "Add gender edit.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:macro template=\"public:helper_user_dob_edit\" name=\"dob_edit\" arg-dobData=\"{$user.Profile}\" />",
+    "replace": "$0\n<xf:macro template=\"public:tgc_helper_gender_edit\" name=\"gender\" arg-user=\"{$user}\" />"
+}

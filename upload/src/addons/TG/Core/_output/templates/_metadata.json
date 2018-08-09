@@ -1,0 +1,27 @@
+{
+    "admin/tgc_addon_list.less": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "2117eb2529abbc5f6f4be340c4ad00db"
+    },
+    "admin/tgcore_addon_list.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "4f4e16dc4fe9a2d0f7b9d4737dbcc6e2"
+    },
+    "public/tgc_bootstrap_material_datetimepicker.less": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "414322fdd4746bfb3bcc92800487cb93"
+    },
+    "public/tgc_core_input.less": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "b3581445c4d6f973f61cbab1408a282c"
+    },
+    "public/tgc_helper_gender_edit.html": {
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "a1c44cde02ba7be1ae95b23ddff745e5"
+    }
+}

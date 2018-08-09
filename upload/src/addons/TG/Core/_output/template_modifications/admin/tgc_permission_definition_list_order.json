@@ -1,0 +1,9 @@
+{
+    "template": "permission_definition_list",
+    "description": "Add order.",
+    "execution_order": 10,
+    "enabled": true,
+    "action": "str_replace",
+    "find": "<xf:datarow\n\t\t\t\t\t\t\t\thref=\"{{ link('permission-definitions/permissions/edit', $permission) }}\"\n\t\t\t\t\t\t\t\tlabel=\"{$permission.title}\"\n\t\t\t\t\t\t\t\thint=\"{$permission.permission_group_id} / {$permission.permission_id}\"\n\t\t\t\t\t\t\t\thash=\"{$permission.permission_group_id}_{$permission.permission_id}\" />",
+    "replace": "<xf:datarow\n\thref=\"{{ link('permission-definitions/permissions/edit', $permission) }}\"\n\tlabel=\"{$permission.title}\"\n\thint=\"{$permission.permission_group_id} / {$permission.permission_id}\"\n\thash=\"{$permission.permission_group_id}_{$permission.permission_id}\">\n\n\t<xf:cell class=\"dataList-cell--min dataList-cell--hint\">{$permission.display_order}</xf:cell>\n</xf:datarow>"
+}

@@ -1,0 +1,25 @@
+<xf:title>{{ phrase('add_ons') }}</xf:title>
+
+<xf:css src="tgc_addon_list.less" />
+
+<xf:if is="$addOns">
+	<div class="addOnList">
+		<xf:foreach loop="{$addOns}" value="$addOn">
+			<div class="block block-container">
+				<div class="block-body block-row">
+					<div class="addon-image">
+						<xf:macro template="addon_list_macros" name="addon_list_item_icon" arg-addOn="{$addOn}" />
+					</div>
+					<div class="addon-info">
+						{$addOn.title}
+					</div>
+				</div>
+				<div class="block-footer">
+					<xf:macro template="addon_list_macros" name="addon_list_item_menu" arg-addOn="{$addOn}" />
+				</div>
+			</div>
+		</xf:foreach>
+	</div>
+<xf:else />
+	<div class="blockMessage">{{ phrase('no_add_ons_installed_or_available_to_be_installed') }}</div>
+</xf:if>
