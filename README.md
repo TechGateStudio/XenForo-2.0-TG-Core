@@ -45,14 +45,14 @@ The plugin is auxiliary for some TechGate Studio developments, and also introduc
 - Select the gender of the user.
 - Manager rebuild cache.
 - Small utility:
-    - Setting permissions for user groups:
-        - Collapsed rights settings panel.
-        - Added plugin names.
-    - Setting the definition of user access rights:
-        - Link to add permissions in each interface group.
-        - Filter permissions on the plugin.
-    - Displays the size of the disk space:
-        - The size of the total disk space.
-        - The size of free disk space.
+    - Setting permissions for user groups:
+        - Collapsed rights settings panel.
+        - Added plugin names.
+    - Setting the definition of user access rights:
+        - Link to add permissions in each interface group.
+        - Filter permissions on the plugin.
+    - Displays the size of the disk space:
+        - The size of the total disk space.
+        - The size of free disk space.
 - Technical entries:
-    - The `<xf: datetimeinput />` tag for invoking date and time input.
+    - The `<xf: datetimeinput />` tag for invoking date and time input.
