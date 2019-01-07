@@ -1,0 +1,42 @@
+<xf:title>
+	<xf:if is="$rebuild.isInsert()">
+		{{ phrase('tgc_add_rebuild') }}
+	<xf:else />
+		{{ phrase('tgc_edit_rebuild:') }} {$rebuild.title}
+	</xf:if>
+</xf:title>
+
+<xf:pageaction if="$rebuild.isUpdate()">
+	<xf:button href="{{ link('tgc-rebuilds/delete', $rebuild) }}" icon="delete" overlay="true" />
+</xf:pageaction>
+
+<xf:form action="{{ link('tgc-rebuilds/save', $rebuild) }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="rebuild_id" value="{$rebuild.rebuild_id}"
+				label="{{ phrase('tgc_rebuild_id') }}" />
+			
+			<xf:textboxrow name="title" value="{{ $rebuild.isUpdate() ? $rebuild.title : '' }}"
+				label="{{ phrase('title') }}" />
+			
+			<xf:textarearow name="description" value="{{ $rebuild.isUpdate() ? $rebuild.description : '' }}"
+				label="{{ phrase('description') }}" />
+			
+			<xf:textboxrow name="class" value="{$rebuild.class}"
+				maxlength="{{ max_length($rebuild, 'class') }}"
+				label="{{ phrase('class') }}" />
+			
+			<xf:codeeditorrow name="template" value="{$rebuild.template}"
+				mode="html"
+				rowclass="js-codeEditorContainer"
+				data-submit-selector=".js-submitButton"
+				label="{{ phrase('template') }}"
+				explain="{{ phrase('you_may_use_xenforo_template_syntax_here') }}"
+				hint="{{ phrase('tgc_rebuild_template_hint') }}" />
+			
+			<xf:macro template="addon_macros" name="addon_edit" arg-addOnId="{$rebuild.addon_id}" />
+		</div>
+		
+		<xf:macro template="tgc_edit_macros" name="save_or_exit" arg-sticky="{{ true }}" />
+	</div>
+</xf:form>

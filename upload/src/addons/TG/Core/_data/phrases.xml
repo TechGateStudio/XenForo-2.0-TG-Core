@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <phrases>
+  <phrase title="admin_navigation.TGCRebuildCaches" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Rebuild caches]]></phrase>
+  <phrase title="admin_navigation.TGCTools" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Tools]]></phrase>
+  <phrase title="admin_navigation.TGCoreAddons" version_id="1000113" version_string="1.0.1 Alpha 3"><![CDATA[Плагины TechGate]]></phrase>
+  <phrase title="admin_navigation.TGCoreOptions" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Настройки]]></phrase>
   <phrase title="admin_navigation.techgateCore" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[TechGate | Core]]></phrase>
+  <phrase title="option.visableTGAddOns" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Display TG plugins in the general list of plugins?]]></phrase>
+  <phrase title="option_explain.visableTGAddOns" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Allows you to hide / show all TG plugins in the general list of XenForo plugins.]]></phrase>
+  <phrase title="option_group.TGCore" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[TG | Core]]></phrase>
+  <phrase title="option_group_description.TGCore" version_id="1000112" version_string="1.0.1 Alpha 2"><![CDATA[TechGate kernel settings.]]></phrase>
+  <phrase title="tgc_add_rebuild" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Add rebuilding cache]]></phrase>
+  <phrase title="tgc_addon_disabled" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Disabled]]></phrase>
+  <phrase title="tgc_addon_installable" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Installable]]></phrase>
+  <phrase title="tgc_addon_istalled" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Installed]]></phrase>
+  <phrase title="tgc_addon_upgradeable" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Upgradeable]]></phrase>
+  <phrase title="tgc_confirm_action_delete" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Confirm delete]]></phrase>
+  <phrase title="tgc_confirm_that_you_action_to_delete" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Please confirm your deletion action]]></phrase>
+  <phrase title="tgc_edit_rebuild" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Edit rebuilding cache]]></phrase>
   <phrase title="tgc_gender" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Gender]]></phrase>
   <phrase title="tgc_gender_female" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Female]]></phrase>
   <phrase title="tgc_gender_male" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Male]]></phrase>
+  <phrase title="tgc_list_rebuild_cache_empty" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[The cache rebuild list is empty.]]></phrase>
+  <phrase title="tgc_option_rebuild_are_missing" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Rebuild settings are missing!]]></phrase>
+  <phrase title="tgc_rebuild_id" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Rebuilding cache unique name]]></phrase>
+  <phrase title="tgc_rebuild_template_hint" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[This template may contain additional settings for rebuilding the cache.]]></phrase>
 </phrases>

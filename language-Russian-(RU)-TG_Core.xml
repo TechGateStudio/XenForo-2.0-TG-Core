@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<language title="Russian (RU)" date_format="j M Y" time_format="H:i" currency_format="&quot;{value}&quot; {symbol}" week_start="1" decimal_point="." thousands_separator="," label_separator=":" comma_separator=", " ellipsis="..." parenthesis_open="(" parenthesis_close=")" language_code="ru-RU" text_direction="LTR" addon_id="TG/Core" export_version="2">
+<language title="Russian (RU)" date_format="j M Y" time_format="H:i" currency_format="&quot;{value}&quot;{symbol}" week_start="1" decimal_point="." thousands_separator="," label_separator=":" comma_separator=", " ellipsis="..." parenthesis_open="(" parenthesis_close=")" language_code="ru-RU" text_direction="LTR" addon_id="TG/Core" export_version="2">
+  <phrase title="admin_navigation.TGCRebuildCaches" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Перестроение кэшей]]></phrase>
+  <phrase title="admin_navigation.TGCTools" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Инструменты]]></phrase>
+  <phrase title="admin_navigation.TGCoreAddons" addon_id="TG/Core" version_id="1000113" version_string="1.0.1 Alpha 3"><![CDATA[Плагины TechGate]]></phrase>
+  <phrase title="admin_navigation.TGCoreOptions" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Настройки]]></phrase>
+  <phrase title="admin_navigation.techgateCore" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[TechGate | Core]]></phrase>
+  <phrase title="option.visableTGAddOns" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Отображать плагины TG в общем списке плагинов?]]></phrase>
+  <phrase title="option_explain.visableTGAddOns" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Позволяет скрыть/отобразить все плагины TG в общем списке плагинов XenForo.]]></phrase>
+  <phrase title="option_group.TGCore" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[TG | Core]]></phrase>
+  <phrase title="option_group_description.TGCore" addon_id="TG/Core" version_id="1000112" version_string="1.0.1 Alpha 2"><![CDATA[Настройки ядра TechGate.]]></phrase>
+  <phrase title="tgc_add_rebuild" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Добавить перестроение кэша]]></phrase>
+  <phrase title="tgc_addon_disabled" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Отключенные]]></phrase>
+  <phrase title="tgc_addon_installable" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Устанавливаемые]]></phrase>
+  <phrase title="tgc_addon_istalled" addon_id="TG/Core" version_id="1000214" version_string="1.0.2 Alpha 4"><![CDATA[Установленные]]></phrase>
+  <phrase title="tgc_addon_upgradeable" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Обновляемые]]></phrase>
+  <phrase title="tgc_confirm_action_delete" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Подтверждение удаления]]></phrase>
+  <phrase title="tgc_confirm_that_you_action_to_delete" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Пожалуйста подтвердите ваше действие на удаление]]></phrase>
+  <phrase title="tgc_disc_total_space" addon_id="TG/Core" version_id="1000214" version_string="1.0.2 Alpha 4"><![CDATA[Общий размер дискового пространства]]></phrase>
+  <phrase title="tgc_disk_free_space" addon_id="TG/Core" version_id="1000214" version_string="1.0.2 Alpha 4"><![CDATA[Свободно на диске]]></phrase>
+  <phrase title="tgc_edit_rebuild" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Изменить перестроение  кэша]]></phrase>
   <phrase title="tgc_gender" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Пол]]></phrase>
   <phrase title="tgc_gender_female" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Девушка]]></phrase>
   <phrase title="tgc_gender_male" addon_id="TG/Core" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[Мужчина]]></phrase>
+  <phrase title="tgc_help_custom_variables" addon_id="TG/Core" version_id="1000113" version_string="1.0.1 Alpha 3"><![CDATA[Так же вы можете добавить в свой перестроитель статический метод <code><em><b>rebuildViewParams</b></em></code>, что позволит добавить переменные в ваш шаблон ниже.]]></phrase>
+  <phrase title="tgc_list_rebuild_cache_empty" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Список перестроения кэша пуст.	]]></phrase>
+  <phrase title="tgc_option_rebuild_are_missing" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Настройки перестроения отсутствуют!]]></phrase>
+  <phrase title="tgc_rebuild_description.test" addon_id="TG/Core" version_id="1000214" version_string="1.0.2 Alpha 4"><![CDATA[Данное перестроение для примера и не является функциональным.]]></phrase>
+  <phrase title="tgc_rebuild_id" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Уникальное имя перестроения кэша]]></phrase>
+  <phrase title="tgc_rebuild_template_hint" addon_id="TG/Core" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[Данный шаблон может содержать дополнительные настройки для перестроения кэша.]]></phrase>
+  <phrase title="tgc_rebuild_title.test" addon_id="TG/Core" version_id="1000214" version_string="1.0.2 Alpha 4"><![CDATA[Тест]]></phrase>
 </language>

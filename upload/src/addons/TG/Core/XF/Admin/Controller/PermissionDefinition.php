@@ -23,7 +23,9 @@ class PermissionDefinition extends XFCP_PermissionDefinition
 
 		$reply->setParams([
 			'currentAddOn' => $currentAddOn,
-			'addOns' => \XF::repository('XF:AddOn')->findAddOnsForList()->fetch(),
+			'addOns' => \XF::repository('XF:AddOn')
+                ->findAddOnsForList()
+                ->fetch(),
 			'linkParams' => $linkParams
 		]);
 
@@ -52,7 +54,7 @@ class PermissionDefinition extends XFCP_PermissionDefinition
 				}
 			}
 
-			$reply->setParam('interfaceGroups', new \TG\Core\Mvc\Entity\ArrayCollection($interfaceGroups));
+			$reply->setParam('interfaceGroups', \TG\Core::newArrayCollection($interfaceGroups));
 		}
 
 		return $reply;

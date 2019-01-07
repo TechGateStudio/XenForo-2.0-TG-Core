@@ -1,9 +1,0 @@
-{
-    "template": "permission_definition_list",
-    "description": "Add addon filter.",
-    "execution_order": 10,
-    "enabled": true,
-    "action": "str_replace",
-    "find": "</xf:pageaction>",
-    "replace": "$0\n<div class=\"block\">\n\t<div class=\"block-other\">\n\t\t<xf:macro template=\"addon_macros\" name=\"addon_change_menu\"\n\t\t\t\t  arg-addOns=\"{$addOns}\"\n\t\t\t\t  arg-currentAddOn=\"{$currentAddOn}\"\n\t\t\t\t  arg-route=\"permission-definitions\"\n\t\t\t\t  arg-routeData=\"null\"\n\t\t\t\t  arg-routeParams=\"{$linkParams}\"/>\n\t</div>\n</div>"
-}

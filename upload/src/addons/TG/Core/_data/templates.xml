@@ -1,5 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <templates>
+  <template type="admin" title="tgc___delete" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[<xf:title>{{ phrase('tgc_confirm_action_delete:') }} {$title}</xf:title>
+
+<xf:form class="block" action="{$delete_url}" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:inforow rowtype="confirm">
+				{{ phrase('tgc_confirm_that_you_action_to_delete:') }}
+				<strong><a href="{$edit_url}">{$title}</a></strong>
+			</xf:inforow>
+		</div>
+		
+		<xf:submitrow icon="delete" />
+	</div>
+</xf:form>]]></template>
   <template type="admin" title="tgc_addon_list.less" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[.addOnList
 {
 	text-align: center;
@@ -15,31 +29,265 @@
 		}
 	}
 }]]></template>
+  <template type="admin" title="tgc_edit_macros" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[<xf:macro name="save_or_exit" arg-sticky="{{ false }}">
+	<xf:submitrow sticky="{$sticky}" icon="save">
+		<xf:html>
+			<xf:button type="submit" icon="save" name="exit">{{ phrase('save_and_exit') }}</xf:button>
+		</xf:html>
+	</xf:submitrow>
+</xf:macro>]]></template>
+  <template type="admin" title="tgc_rebuild" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[<xf:foreach loop="{$rebuilds}" value="{$rebuild}">
+	<xf:form action="{{ link('tools/rebuild') }}" class="block">
+		<div class="block-container">
+			<h2 class="block-header">{$rebuild.title}</h2>
+			<div class="block-body">
+				<xf:hiddenval name="job_id">{$rebuild.rebuild_id}</xf:hiddenval>
+				<xf:hiddenval name="job">{$rebuild.class}</xf:hiddenval>
+				
+				<xf:if is="{$rebuild.description}">
+					<xf:inforow>{$rebuild.description}</xf:inforow>
+				<xf:elseif is="!{$rebuild.template}" />
+					<xf:inforow>{{ phrase('tgc_option_rebuild_are_missing') }}</xf:inforow>
+				</xf:if>
+					
+				<xf:if is="{$rebuild.template}">
+					{$rebuild.template_render|raw}
+				</xf:if>
+			</div>
+			
+			<xf:submitrow submit="{{ phrase('rebuild_now') }}" />
+		</div>
+	</xf:form>
+</xf:foreach>]]></template>
+  <template type="admin" title="tgc_rebuild_edit" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[<xf:title>
+	<xf:if is="$rebuild.isInsert()">
+		{{ phrase('tgc_add_rebuild') }}
+	<xf:else />
+		{{ phrase('tgc_edit_rebuild:') }} {$rebuild.title}
+	</xf:if>
+</xf:title>
+
+<xf:pageaction if="$rebuild.isUpdate()">
+	<xf:button href="{{ link('tgc-rebuilds/delete', $rebuild) }}" icon="delete" overlay="true" />
+</xf:pageaction>
+
+<xf:form action="{{ link('tgc-rebuilds/save', $rebuild) }}" ajax="true" class="block">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:textboxrow name="rebuild_id" value="{$rebuild.rebuild_id}"
+				label="{{ phrase('tgc_rebuild_id') }}" />
+			
+			<xf:textboxrow name="title" value="{{ $rebuild.isUpdate() ? $rebuild.title : '' }}"
+				label="{{ phrase('title') }}" />
+			
+			<xf:textarearow name="description" value="{{ $rebuild.isUpdate() ? $rebuild.description : '' }}"
+				label="{{ phrase('description') }}" />
+			
+			<xf:textboxrow name="class" value="{$rebuild.class}"
+				maxlength="{{ max_length($rebuild, 'class') }}"
+				label="{{ phrase('class') }}" />
+			
+			<xf:codeeditorrow name="template" value="{$rebuild.template}"
+				mode="html"
+				rowclass="js-codeEditorContainer"
+				data-submit-selector=".js-submitButton"
+				label="{{ phrase('template') }}"
+				explain="{{ phrase('you_may_use_xenforo_template_syntax_here') }}"
+				hint="{{ phrase('tgc_rebuild_template_hint') }}" />
+			
+			<xf:macro template="addon_macros" name="addon_edit" arg-addOnId="{$rebuild.addon_id}" />
+		</div>
+		
+		<xf:macro template="tgc_edit_macros" name="save_or_exit" arg-sticky="{{ true }}" />
+	</div>
+</xf:form>]]></template>
+  <template type="admin" title="tgc_rebuild_list" version_id="1000111" version_string="1.0.1 Alpha 1"><![CDATA[<xf:title>{{ phrase('rebuild_caches') }}</xf:title>
+
+<xf:pageaction>
+	<xf:button href="{{ link('tgc-rebuilds/add') }}" icon="add">
+		{{ phrase('tgc_add_rebuild') }}
+	</xf:button>
+</xf:pageaction>
+
+<div class="block">
+	<div class="block-container">
+		<xf:if is="$rebuilds is not empty">
+			<xf:datalist>
+				<xf:datarow rowtype="header">
+					<xf:cell>{{ phrase('title') }}</xf:cell>
+					<xf:cell>{{ phrase('date') }}</xf:cell>
+					<xf:cell>{{ phrase('action') }}</xf:cell>
+				</xf:datarow>
+				
+				<xf:foreach loop="{$rebuilds}" value="$rebuild">
+					<xf:datarow>
+						<xf:main label="{$rebuild.title}"
+								 href="{{ link('tgc-rebuilds/edit', $rebuild) }}" />
+						
+						<xf:cell>
+							{{ $rebuild.date ? date_dynamic($rebuild.date) : phrase('never') }}
+						</xf:cell>
+
+						<xf:delete href="{{ link('tgc-rebuilds/delete', $rebuild) }}" overlay="true" />
+					</xf:datarow>
+
+				</xf:foreach>
+			</xf:datalist>
+		<xf:else />
+			<div class="block-body block-row">
+				{{ phrase('tgc_list_rebuild_cache_empty') }}
+			</div>
+		</xf:if>
+	</div>
+</div>]]></template>
   <template type="admin" title="tgcore_addon_list" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:title>{{ phrase('add_ons') }}</xf:title>
 
 <xf:css src="tgc_addon_list.less" />
 
-<xf:if is="$addOns">
-	<div class="addOnList">
-		<xf:foreach loop="{$addOns}" value="$addOn">
-			<div class="block block-container">
-				<div class="block-body block-row">
-					<div class="addon-image">
-						<xf:macro template="addon_list_macros" name="addon_list_item_icon" arg-addOn="{$addOn}" />
-					</div>
-					<div class="addon-info">
-						{$addOn.title}
-					</div>
-				</div>
-				<div class="block-footer">
-					<xf:macro template="addon_list_macros" name="addon_list_item_menu" arg-addOn="{$addOn}" />
-				</div>
-			</div>
-		</xf:foreach>
+<div class="block">
+	<div class="block-container">
+		<h2 class="block-tabHeader block-tabHeader--memberTabs tabs hScroller"
+			data-xf-init="tabs h-scroller"
+			data-panes=".js-memberTabPanes"
+			data-state="replace"
+			role="tablist">
+			<span class="hScroller-scroll">
+				<a rel="nofollow"
+				   class="tabs-tab"
+				   id="addons-intalled"
+				   role="tab">{{ phrase('tgc_addon_istalled') }}</a>
+				<a rel="nofollow"
+				   class="tabs-tab"
+				   id="addons-disabled"
+				   role="tab">{{ phrase('tgc_addon_disabled') }}</a>
+				<a rel="nofollow"
+				   class="tabs-tab"
+				   id="addons-updraged"
+				   role="tab">{{ phrase('tgc_addon_upgradeable') }}</a>
+				<a rel="nofollow"
+				   class="tabs-tab"
+				   id="addons-noninstaled"
+				   role="tab">{{ phrase('tgc_addon_installable') }}</a>
+			</span>
+		</h2>
+		<div class="block-body">
+			<ul class="tabPanes js-memberTabPanes">
+				<li role="tabpanel" id="addons-intalled">
+					<xf:datalist>
+						<xf:foreach loop="{$installed}" value="$addOn">
+							<xf:datarow>
+								<xf:cell>
+									<xf:macro template="addon_list_macros" name="addon_list_item_icon" arg-addOn="{$addOn}" />
+								</xf:cell>
+
+								<xf:main label="{$addOn.title}" hint="{$addOn.version_string}">
+									<xf:explain>
+										{{ $addOn.description ? snippet($addOn.description, 200)|nl2br : '&nbsp;' }}
+									</xf:explain>
+								</xf:main>
+								
+								<xf:cell>
+									<xf:macro template="addon_list_macros" name="addon_list_item_footer" arg-addOn="{$addOn}" />
+								</xf:cell>
+								
+								<xf:cell>
+									<xf:macro template="addon_list_macros" name="addon_list_item_menu" arg-addOn="{$addOn}" />
+								</xf:cell>
+							</xf:datarow>
+						</xf:foreach>
+					</xf:datalist>
+				</li>
+				<li role="tabpanel" id="addons-disabled">
+					<xf:if is="$disabled is not empty">
+						<xf:datalist>
+							<xf:foreach loop="{$disabled}" value="$addOn">
+								<xf:datarow>
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_icon" arg-addOn="{$addOn}" />
+									</xf:cell>
+
+									<xf:main label="{$addOn.title}" hint="{$addOn.version_string}">
+										<xf:explain>
+											{{ $addOn.description ? snippet($addOn.description, 200)|nl2br : '&nbsp;' }}
+										</xf:explain>
+									</xf:main>
+
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_footer" arg-addOn="{$addOn}" />
+									</xf:cell>
+
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_menu" arg-addOn="{$addOn}" />
+									</xf:cell>
+								</xf:datarow>
+							</xf:foreach>
+						</xf:datalist>
+					<xf:else />
+						<div class="block-row">{{ phrase('no_add_ons_installed_or_available_to_be_installed') }}</div>
+					</xf:if>
+				</li>
+				<li role="tabpanel" id="addons-updraged">
+					<xf:if is="$upgradeable is not empty">
+						<xf:datalist>
+							<xf:foreach loop="{$upgradeable}" value="$addOn">
+								<xf:datarow>
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_icon" arg-addOn="{$addOn}" />
+									</xf:cell>
+
+									<xf:main label="{$addOn.title}" hint="{$addOn.version_string}">
+										<xf:explain>
+											{{ $addOn.description ? snippet($addOn.description, 200)|nl2br : '&nbsp;' }}
+										</xf:explain>
+									</xf:main>
+
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_footer" arg-addOn="{$addOn}" />
+									</xf:cell>
+
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_menu" arg-addOn="{$addOn}" />
+									</xf:cell>
+								</xf:datarow>
+							</xf:foreach>
+						</xf:datalist>
+					<xf:else />
+						<div class="block-row">{{ phrase('no_add_ons_installed_or_available_to_be_installed') }}</div>
+					</xf:if>
+				</li>
+				<li role="tabpanel" id="addons-noninstaled">
+					<xf:if is="$installable is not empty">
+						<xf:datalist>
+							<xf:foreach loop="{$installable}" value="$addOn">
+								<xf:datarow>
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_icon" arg-addOn="{$addOn}" />
+									</xf:cell>
+
+									<xf:main label="{$addOn.title}" hint="{$addOn.version_string}">
+										<xf:explain>
+											{{ $addOn.description ? snippet($addOn.description, 200)|nl2br : '&nbsp;' }}
+										</xf:explain>
+									</xf:main>
+
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_footer" arg-addOn="{$addOn}" />
+									</xf:cell>
+
+									<xf:cell>
+										<xf:macro template="addon_list_macros" name="addon_list_item_menu" arg-addOn="{$addOn}" />
+									</xf:cell>
+								</xf:datarow>
+							</xf:foreach>
+						</xf:datalist>
+					<xf:else />
+						<div class="block-row">{{ phrase('no_add_ons_installed_or_available_to_be_installed') }}</div>
+					</xf:if>
+				</li>
+			</ul>
+		</div>
 	</div>
-<xf:else />
-	<div class="blockMessage">{{ phrase('no_add_ons_installed_or_available_to_be_installed') }}</div>
-</xf:if>]]></template>
+</div>]]></template>
   <template type="admin" title="tgcore_macros" version_id="1000010" version_string="1.0.0 Alpha"><![CDATA[<xf:macro name="saveorexit">
 	<xf:submitrow sticky="true" icon="save">
 		<xf:html>

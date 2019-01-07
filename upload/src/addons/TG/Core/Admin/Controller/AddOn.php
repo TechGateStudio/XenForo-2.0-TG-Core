@@ -3,7 +3,6 @@
 namespace TG\Core\Admin\Controller;
 
 use XF\Mvc\ParameterBag;
-
 use XF\Admin\Controller\AbstractController;
 
 class AddOn extends AbstractController
@@ -12,16 +11,59 @@ class AddOn extends AbstractController
 	{
 		$addOns = [];
 
+        $disabled = [];
+        $upgradeable = [];
+		$installed = [];
+		$installable = [];
+		$skippable = [];
+        
 		foreach ($this->getAddOnManager()->getAllAddOns() as $id => $addOn)
 		{
-			if (substr($id, 0, 3) == 'TG/')
+			if (!\TG\Core::canTGAddOn($addOn))
 			{
-				$addOns[$id] = $addOn;
+				continue;
+			}
+            
+            $addOns[$id] = $addOn;
+            
+            if (isset($skippable[$id]))
+			{
+				continue;
+			}
+            
+            if ($addOn->canUpgrade())
+			{
+				$skip = $addOn->legacy_addon_id;
+				if ($skip)
+				{
+					$skippable[$skip] = $skip;
+				}
+				$upgradeable[$id] = $addOn;
+			}
+            else if (!$addOn->canInstall() && !$addOn->active)
+            {
+                $disabled[$id] = $addOn; 
+            }
+			else if ($addOn->isInstalled())
+			{
+				$installed[$id] = $addOn;
+			}
+			else if ($addOn->canInstall())
+			{
+				$installable[$id] = $addOn;
 			}
 		}
+        
+        $addOnRepo = $this->getAddOnRepo();
 
 		return $this->view('TG\Core:AddOn\Listing', 'tgcore_addon_list', [
-			'addOns' => $addOns
+			'addOns' => $addOns,
+            
+            'upgradeable' => $upgradeable,
+			'installed' => $installed,
+            'disabled' => $disabled,
+			'installable' => $installable,
+			'total' => count($upgradeable) + count($installed) + count($installable)
 		]);
 	}
 

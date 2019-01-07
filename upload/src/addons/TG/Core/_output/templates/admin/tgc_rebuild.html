@@ -1,0 +1,23 @@
+<xf:foreach loop="{$rebuilds}" value="{$rebuild}">
+	<xf:form action="{{ link('tools/rebuild') }}" class="block">
+		<div class="block-container">
+			<h2 class="block-header">{$rebuild.title}</h2>
+			<div class="block-body">
+				<xf:hiddenval name="job_id">{$rebuild.rebuild_id}</xf:hiddenval>
+				<xf:hiddenval name="job">{$rebuild.class}</xf:hiddenval>
+				
+				<xf:if is="{$rebuild.description}">
+					<xf:inforow>{$rebuild.description}</xf:inforow>
+				<xf:elseif is="!{$rebuild.template}" />
+					<xf:inforow>{{ phrase('tgc_option_rebuild_are_missing') }}</xf:inforow>
+				</xf:if>
+					
+				<xf:if is="{$rebuild.template}">
+					{$rebuild.template_render|raw}
+				</xf:if>
+			</div>
+			
+			<xf:submitrow submit="{{ phrase('rebuild_now') }}" />
+		</div>
+	</xf:form>
+</xf:foreach>

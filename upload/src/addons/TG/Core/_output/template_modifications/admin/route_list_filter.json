@@ -1,9 +1,0 @@
-{
-    "template": "route_list",
-    "description": "Add filter.",
-    "execution_order": 10,
-    "enabled": true,
-    "action": "str_replace",
-    "find": "<div class=\"block-container\">",
-    "replace": "<div class=\"block-outer\">\n\t<xf:macro template=\"filter_macros\" name=\"quick_filter\"\n\t\t\t  arg-key=\"routes\"\n\t\t\t  arg-class=\"block-outer-opposite\" />\n</div>\n$0"
-}

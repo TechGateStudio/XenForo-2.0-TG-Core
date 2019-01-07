@@ -10,6 +10,8 @@ class Manager
 
 	protected $mySQLData;
 
+    protected $currentVersion;
+    
 	public function __construct(\XF\AddOn\AddOn $addOn, \XF\App $app)
 	{
 		$this->addOn = $addOn;
@@ -153,7 +155,8 @@ class Manager
 		if (isset($upgrades[$versionId]))
 		{
 			require_once($upgrades[$versionId]);
-			$class = '\\' . $this->addOn->addon_id . '\\Install\\Upgrade\\Version' . $versionId;
+			$class = '\\' . $this->addOn->addon_id . '\\Install\\Upgrade\\Upgrade' . $versionId;
+            $class = str_ireplace('/', '\\', $class);
 			return new $class($this, $this->app);
 		}
 
@@ -164,7 +167,7 @@ class Manager
 	{
 		if ($this->currentVersion === null)
 		{
-			$existingVersion = $this->db()->fetchOne("
+			$existingVersion = $this->db->fetchOne("
 				SELECT version_id
 				FROM xf_addon
 				WHERE addon_id = '{$this->addOn->addon_id}'

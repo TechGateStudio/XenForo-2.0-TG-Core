@@ -1,0 +1,39 @@
+<xf:title>{{ phrase('rebuild_caches') }}</xf:title>
+
+<xf:pageaction>
+	<xf:button href="{{ link('tgc-rebuilds/add') }}" icon="add">
+		{{ phrase('tgc_add_rebuild') }}
+	</xf:button>
+</xf:pageaction>
+
+<div class="block">
+	<div class="block-container">
+		<xf:if is="$rebuilds is not empty">
+			<xf:datalist>
+				<xf:datarow rowtype="header">
+					<xf:cell>{{ phrase('title') }}</xf:cell>
+					<xf:cell>{{ phrase('date') }}</xf:cell>
+					<xf:cell>{{ phrase('action') }}</xf:cell>
+				</xf:datarow>
+				
+				<xf:foreach loop="{$rebuilds}" value="$rebuild">
+					<xf:datarow>
+						<xf:main label="{$rebuild.title}"
+								 href="{{ link('tgc-rebuilds/edit', $rebuild) }}" />
+						
+						<xf:cell>
+							{{ $rebuild.date ? date_dynamic($rebuild.date) : phrase('never') }}
+						</xf:cell>
+
+						<xf:delete href="{{ link('tgc-rebuilds/delete', $rebuild) }}" overlay="true" />
+					</xf:datarow>
+
+				</xf:foreach>
+			</xf:datalist>
+		<xf:else />
+			<div class="block-body block-row">
+				{{ phrase('tgc_list_rebuild_cache_empty') }}
+			</div>
+		</xf:if>
+	</div>
+</div>

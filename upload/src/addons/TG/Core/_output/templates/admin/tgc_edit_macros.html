@@ -1,0 +1,7 @@
+<xf:macro name="save_or_exit" arg-sticky="{{ false }}">
+	<xf:submitrow sticky="{$sticky}" icon="save">
+		<xf:html>
+			<xf:button type="submit" icon="save" name="exit">{{ phrase('save_and_exit') }}</xf:button>
+		</xf:html>
+	</xf:submitrow>
+</xf:macro>

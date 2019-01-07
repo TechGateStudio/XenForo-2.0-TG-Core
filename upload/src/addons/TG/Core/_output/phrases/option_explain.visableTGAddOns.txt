@@ -1,0 +1,1 @@
+Allows you to hide / show all TG plugins in the general list of XenForo plugins.

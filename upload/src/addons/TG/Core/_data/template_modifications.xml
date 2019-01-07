@@ -88,6 +88,10 @@ $0]]></replace>
 </div>
 $0]]></replace>
   </modification>
+  <modification type="admin" template="tools_rebuild" modification_key="tgc_tools_rebuild" description="Add rebuilds." execution_order="10" enabled="1" action="preg_replace">
+    <find><![CDATA[/$/]]></find>
+    <replace><![CDATA[<xf:include template="tgc_rebuild" />]]></replace>
+  </modification>
   <modification type="admin" template="user_edit" modification_key="tgc_user_edit_gender" description="Add gender edit." execution_order="10" enabled="1" action="str_replace">
     <find><![CDATA[<xf:macro template="public:helper_user_dob_edit" name="dob_edit" arg-dobData="{$user.Profile}" />]]></find>
     <replace><![CDATA[$0

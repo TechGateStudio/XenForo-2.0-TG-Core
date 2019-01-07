@@ -1,0 +1,1 @@
+Display TG plugins in the general list of plugins?

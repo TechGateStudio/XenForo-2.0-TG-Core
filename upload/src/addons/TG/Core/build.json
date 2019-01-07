@@ -1,5 +1,7 @@
 {
     "additional_files": [
-        "js/tg/core"
+        "js/tg/core",
+        "src/addons/TG/Core/build.json",
+        "src/addons/TG/Core.php"
     ]
 }

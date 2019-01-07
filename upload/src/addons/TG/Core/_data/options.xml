@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<options/>
+<options>
+  <option option_id="visableTGAddOns" edit_format="onoff" data_type="string">
+    <default_value></default_value>
+    <relation group_id="TGCore" display_order="1"/>
+  </option>
+</options>

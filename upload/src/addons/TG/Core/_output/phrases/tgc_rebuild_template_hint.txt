@@ -1,0 +1,1 @@
+This template may contain additional settings for rebuilding the cache.

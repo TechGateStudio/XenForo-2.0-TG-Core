@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class_extensions>
+  <extension from_class="XF\AddOn\DataManager" to_class="TG\Core\XF\AddOn\DataManager" execute_order="10" active="1"/>
+  <extension from_class="XF\Admin\Controller\AddOn" to_class="TG\Core\XF\Admin\Controller\AddOn" execute_order="10" active="1"/>
   <extension from_class="XF\Admin\Controller\PermissionDefinition" to_class="TG\Core\XF\Admin\Controller\PermissionDefinition" execute_order="10" active="1"/>
   <extension from_class="XF\Admin\Controller\Route" to_class="TG\Core\XF\Admin\Controller\Route" execute_order="10" active="1"/>
+  <extension from_class="XF\Admin\Controller\Tools" to_class="TG\Core\XF\Admin\Controller\Tools" execute_order="10" active="1"/>
   <extension from_class="XF\Admin\Controller\User" to_class="TG\Core\XF\Admin\Controller\User" execute_order="10" active="1"/>
   <extension from_class="XF\Entity\User" to_class="TG\Core\XF\Entity\User" execute_order="10" active="1"/>
   <extension from_class="XF\Pub\Controller\Account" to_class="TG\Core\XF\Pub\Controller\Account" execute_order="10" active="1"/>

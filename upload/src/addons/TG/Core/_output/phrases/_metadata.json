@@ -1,20 +1,122 @@
 {
-    "tgc_gender.txt": {
+    "admin_navigation.TGCRebuildCaches.txt": {
         "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "019ec3132cdf8ee0f2e2a75cf5d3e459"
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "240fb27735d55ec65d74b9af9ca5245e"
     },
-    "tgc_gender_female.txt": {
+    "admin_navigation.TGCTools.txt": {
         "global_cache": false,
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "b719ce180ec7bd9641fece2f920f4817"
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "8625e1de7be14c39b1d14dc03d822497"
     },
-    "tgc_gender_male.txt": {
+    "admin_navigation.TGCoreAddons.txt": {
+        "global_cache": false,
+        "version_id": 1000113,
+        "version_string": "1.0.1 Alpha 3",
+        "hash": "6a54d10d5bb3b7b157841d168b60113f"
+    },
+    "admin_navigation.TGCoreOptions.txt": {
         "global_cache": false,
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
-        "hash": "63889cfb9d3cbe05d1bd2be5cc9953fd"
+        "hash": "c919d65bd95698af8f15fa8133bf490d"
+    },
+    "option.visableTGAddOns.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "a0470326e87effd18304a37c70f7bca2"
+    },
+    "option_explain.visableTGAddOns.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "69e82683ac5975929920e36cac26298d"
+    },
+    "option_group.TGCore.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "ea123427836a54d9bd75f0558fc31d8c"
+    },
+    "option_group_description.TGCore.txt": {
+        "global_cache": false,
+        "version_id": 1000112,
+        "version_string": "1.0.1 Alpha 2",
+        "hash": "63d75a91c82ae7db1bf59f1be65a3193"
+    },
+    "tgc_add_rebuild.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "0a71b7f2069b80c276e29e749ab4e026"
+    },
+    "tgc_addon_disabled.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "b9f5c797ebbf55adccdd8539a65a0241"
+    },
+    "tgc_addon_installable.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "7f06e3b112ddf0d7f1369c6c8b35f4b6"
+    },
+    "tgc_addon_istalled.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "98dd43dfae05b11befe1f140e0ec787a"
+    },
+    "tgc_addon_upgradeable.txt": {
+        "global_cache": false,
+        "version_id": 1000010,
+        "version_string": "1.0.0 Alpha",
+        "hash": "38fc99eba05cdcc6c04e9e29f168bf03"
+    },
+    "tgc_confirm_action_delete.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "1e9ca04c43dd5d901f2eec3a0075dc02"
+    },
+    "tgc_confirm_that_you_action_to_delete.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "5a0567d2f0561b372040eda77fb137e4"
+    },
+    "tgc_edit_rebuild.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "bd9fe95d784c609cd2263f398aba670a"
+    },
+    "tgc_list_rebuild_cache_empty.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "b765dde6ef2caf57e92dc198d50143e6"
+    },
+    "tgc_option_rebuild_are_missing.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "1629e282e20d78f924f0b3ffa0b2433f"
+    },
+    "tgc_rebuild_id.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "b9354a3f3880f3a097de4cdb03b72ef8"
+    },
+    "tgc_rebuild_template_hint.txt": {
+        "global_cache": false,
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "d733c4dd75b48464bb990afa740fc24e"
     }
 }

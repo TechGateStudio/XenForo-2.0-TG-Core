@@ -1,9 +1,0 @@
-{
-    "template": "permission_definition_list",
-    "description": "Add buttons.",
-    "execution_order": 10,
-    "enabled": true,
-    "action": "str_replace",
-    "find": "{$interfaceGroup.title}",
-    "replace": "<span class=\"u-pullRight\" style=\"width:20px;text-align:center;\" role=\"presentation\" aria-hidden=\"true\"> &middot; </span>\n\n<a href=\"{{ link('permission-definitions/permissions/add', null, {\n\t'interface_group_id': $interfaceGroupId\n}) }}\" class=\"u-pullRight\">{{ phrase('add_permission') }}</a>\n$0"
-}

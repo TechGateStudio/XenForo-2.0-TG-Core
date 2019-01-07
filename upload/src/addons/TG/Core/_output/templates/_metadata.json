@@ -1,27 +1,32 @@
 {
-    "admin/tgc_addon_list.less": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "2117eb2529abbc5f6f4be340c4ad00db"
+    "admin/tgc___delete.html": {
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "45e90c50d7050752773359b5f4c283db"
+    },
+    "admin/tgc_edit_macros.html": {
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "ff74f1277deb15e280a93ad90b293a36"
+    },
+    "admin/tgc_rebuild.html": {
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "9edc34a30d0d641c7e48683189d123fc"
+    },
+    "admin/tgc_rebuild_edit.html": {
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "e87a69d9a7ecec1fac2e7cc714dca1be"
+    },
+    "admin/tgc_rebuild_list.html": {
+        "version_id": 1000111,
+        "version_string": "1.0.1 Alpha 1",
+        "hash": "5a4821915f9d3243280de102b8ffdcfd"
     },
     "admin/tgcore_addon_list.html": {
         "version_id": 1000010,
         "version_string": "1.0.0 Alpha",
-        "hash": "4f4e16dc4fe9a2d0f7b9d4737dbcc6e2"
-    },
-    "public/tgc_bootstrap_material_datetimepicker.less": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "414322fdd4746bfb3bcc92800487cb93"
-    },
-    "public/tgc_core_input.less": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "b3581445c4d6f973f61cbab1408a282c"
-    },
-    "public/tgc_helper_gender_edit.html": {
-        "version_id": 1000010,
-        "version_string": "1.0.0 Alpha",
-        "hash": "a1c44cde02ba7be1ae95b23ddff745e5"
+        "hash": "6807c5f83d9c54c379249c973ec9e1a6"
     }
 }

@@ -1,0 +1,11 @@
+{
+    "route_type": "admin",
+    "route_prefix": "tgc-rebuilds",
+    "sub_name": "",
+    "format": ":str<rebuild_id>",
+    "build_class": "",
+    "build_method": "",
+    "controller": "TG\\Core:Rebuild",
+    "context": "TGCRebuildCaches",
+    "action_prefix": ""
+}

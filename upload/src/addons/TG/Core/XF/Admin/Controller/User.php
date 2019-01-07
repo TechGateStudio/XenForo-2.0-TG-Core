@@ -2,11 +2,9 @@
 
 namespace TG\Core\XF\Admin\Controller;
 
-use XF\Mvc\ParameterBag;
-
 class User extends XFCP_User
 {
-	public function userSaveProcess(\XF\Entity\User $user)
+	protected function userSaveProcess(\XF\Entity\User $user)
 	{
 		$form = parent::userSaveProcess($user);
 		

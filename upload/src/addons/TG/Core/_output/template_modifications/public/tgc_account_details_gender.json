@@ -1,9 +1,0 @@
-{
-    "template": "account_details",
-    "description": "Add gender edit.",
-    "execution_order": 10,
-    "enabled": true,
-    "action": "str_replace",
-    "find": "<xf:macro template=\"helper_account\" name=\"dob_privacy_row\" />",
-    "replace": "$0\n<xf:macro template=\"tgc_helper_gender_edit\" name=\"gender\" arg-user=\"{$xf.visitor}\"/>"
-}

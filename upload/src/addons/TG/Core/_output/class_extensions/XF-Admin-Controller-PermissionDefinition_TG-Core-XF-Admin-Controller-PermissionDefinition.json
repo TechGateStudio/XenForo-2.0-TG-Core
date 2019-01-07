@@ -1,6 +1,0 @@
-{
-    "from_class": "XF\\Admin\\Controller\\PermissionDefinition",
-    "to_class": "TG\\Core\\XF\\Admin\\Controller\\PermissionDefinition",
-    "execute_order": 10,
-    "active": true
-}

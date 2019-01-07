@@ -8,24 +8,24 @@ class Route extends XFCP_Route
 {
 	public function actionSave(ParameterBag $params)
 	{
-		$action = parent::actionSave($params);
+        if ($this->request->exists('exit'))
+        {
+            return parent::actionSave($params);
+        }
+        
+		$this->assertPostOnly();
 
-		$route = $this->assertRouteExists($params['route_id']);
-
-		return $this->redirectSaveOrExit('routes', $route);
-	}
-
-	protected function redirectSaveOrExit($route, $entity)
-	{
-		if ($this->request->exists('exit'))
+		if ($params['route_id'])
 		{
-			$redirect = $this->buildLink($route) . $this->buildLinkHash($entity->getEntityId());
+			$route = $this->assertRouteExists($params['route_id']);
 		}
 		else
 		{
-			$redirect = $this->buildLink($route . '/edit', $entity);
+			$route = $this->em()->create('XF:Route');
 		}
 
-		return $this->redirect($redirect);
+		$this->routeSaveProcess($route)->run();
+        
+        return $this->redirect($this->buildLink('routes/edit', $route));
 	}
 }

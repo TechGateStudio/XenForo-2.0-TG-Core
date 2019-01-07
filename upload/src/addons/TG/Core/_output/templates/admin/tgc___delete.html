@@ -1,0 +1,14 @@
+<xf:title>{{ phrase('tgc_confirm_action_delete:') }} {$title}</xf:title>
+
+<xf:form class="block" action="{$delete_url}" ajax="true">
+	<div class="block-container">
+		<div class="block-body">
+			<xf:inforow rowtype="confirm">
+				{{ phrase('tgc_confirm_that_you_action_to_delete:') }}
+				<strong><a href="{$edit_url}">{$title}</a></strong>
+			</xf:inforow>
+		</div>
+		
+		<xf:submitrow icon="delete" />
+	</div>
+</xf:form>

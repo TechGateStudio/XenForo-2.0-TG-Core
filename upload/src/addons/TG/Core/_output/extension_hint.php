@@ -3,10 +3,17 @@
 // ################## THIS IS A GENERATED FILE ##################
 // DO NOT EDIT DIRECTLY. EDIT THE CLASS EXTENSIONS IN THE CONTROL PANEL.
 
+namespace TG\Core\XF\AddOn
+{
+	class XFCP_DataManager extends \XF\AddOn\DataManager {}
+}
+
 namespace TG\Core\XF\Admin\Controller
 {
+	class XFCP_AddOn extends \XF\Admin\Controller\AddOn {}
 	class XFCP_PermissionDefinition extends \XF\Admin\Controller\PermissionDefinition {}
 	class XFCP_Route extends \XF\Admin\Controller\Route {}
+	class XFCP_Tools extends \XF\Admin\Controller\Tools {}
 	class XFCP_User extends \XF\Admin\Controller\User {}
 }
 
